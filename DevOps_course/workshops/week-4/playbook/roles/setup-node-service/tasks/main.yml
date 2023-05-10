@@ -1,0 +1,19 @@
+---
+# tasks file for setup-node-service
+- name: Deploy template
+  become: yes
+  template:
+    src: node-app.service
+    dest: /etc/systemd/system/{{service_name}}.service
+
+- name: Load service
+  become: yes
+  shell: systemctl daemon-reload
+
+- name: Set to start on boot
+  become: yes
+  shell: systemctl enable {{service_name}}
+
+- name: Start the service
+  become: yes
+  shell: systemctl start {{service_name}}

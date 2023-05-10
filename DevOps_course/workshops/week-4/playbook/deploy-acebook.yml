@@ -1,0 +1,23 @@
+---
+# Your task here is to put the right blocks in order to deploy acebook, then
+# to fill those blocks in with the elements provided, wherever there is a <placeholder>
+# the first big block is provided, and the correct indentation is provided for blocks.
+# Blocks can be found in blocks.txt
+# Elements can be found in elements.txt
+# I'm expecting you'll need to search the internet for some help with this!
+
+- name: Install NodeJS
+  hosts: all
+  become: yes
+
+  tasks: 
+    - name: install Nodejs yum repo
+      shell: curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
+    
+    - name: install NodeJS
+      yum:
+        name: 
+          - <placeholder>
+        state: present
+
+

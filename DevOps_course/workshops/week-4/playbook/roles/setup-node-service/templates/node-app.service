@@ -1,0 +1,14 @@
+[Unit]
+Description={{service_description}}
+After=network.target
+[Service]
+ExecStart={{app_location}}
+Restart=always
+User=nobody
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+Environment=MONGODB_URL={{ mongodb_url }}
+WorkingDirectory={{working_directory}}
+[Install]
+WantedBy=multi-user.target

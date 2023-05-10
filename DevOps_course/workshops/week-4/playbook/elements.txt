@@ -1,0 +1,17 @@
+Elements: (each element will be on one line)
+<placeholder>
+----------
+nodejs
+/var/www/acebook
+dest={{ destination_path }}
+"{{ destination_path }}"
+/var/www/acebook
+mongodb+srv://acebook-user:2y1NJiJt8lNN0LwS@cluster0.w4ng4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+setup-node-service
+npm install --only=production
+"Run the Acebook web server"
+{{ destination_path }}
+/var/www/acebook/bin/www
+'555'
+src={{ git_repo_path }}
+"{{ destination_path }}/bin/www"

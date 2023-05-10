@@ -1,0 +1,60 @@
+Big Blocks:
+----------
+- name: npm install
+  hosts: all
+  vars:
+    destination_path: <placeholder>
+
+  tasks:
+<Small Block placeholder>
+
+----------
+- name: Copy Acebook
+  hosts: all
+  vars:
+    git_repo_path: ../../../../acebook-node-template/ # TODO this should be the path to Acebook on *your* system
+    destination_path: <placeholder>
+
+  tasks: 
+<Small Block placeholder>
+<Small Block placeholder>
+<Small Block placeholder>
+
+
+----------
+- name: Service Setup
+  hosts: all
+  roles:
+<Small Block placeholder>
+
+----------
+Small Blocks:
+----------
+    - role: <placeholder>
+      vars:
+        service_name: "Acebook"
+        service_description: <placeholder>
+        app_location: <placeholder>
+        working_directory: /var/www/acebook
+        mongodb_url: <placeholder>
+
+----------
+    - name: npm install
+      shell: <placeholder>
+      args:
+        chdir: <placeholder>
+
+----------
+    - name: Copy files #TODO this needs a better method - git? or https://serverfault.com/a/909648
+      copy: <placeholder> <placeholder>
+----------
+    - name: set bin permissions
+      file:
+        path: <placeholder>
+        mode: <placeholder>
+
+----------
+    - name: Create destination directory
+      become: yes
+      shell: install -d -m 0755 -o {{ ansible_user_id }} -g 1000 <placeholder>
+----------
